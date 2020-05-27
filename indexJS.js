@@ -1,5 +1,21 @@
 var searchFieldVal="";
 
+const {Client} = require('pg');
+const connectionString = 'postgres://wiucfmzirbegqr:9624d9c375c7f9c8bc973d6396545a3a3d789e6e73a73df5e5bbb1ed519fe234@ec2-23-20-129-146.compute-1.amazonaws.com:5432/dbh1gu7tl09u8';
+
+const client = new Client({
+    connectionString: connectionString,
+    ssl: {
+        rejectUnauthorized: false
+    }
+});
+
+client.connect();
+client.query('SELECT * FROM bibliography', (err, res) => {
+    console.log(err, res);
+    client.end();
+})
+
 function setValueField(){
     var e = document.getElementById('searchFields').value;
     
@@ -55,5 +71,5 @@ function getQuery(){
 
     str += "If  "+searchFieldVal+"<br>";
 
-    document.getElementById('queryVal').innerHTML = str;
+    // document.getElementById('queryVal').innerHTML = str;    
 }
