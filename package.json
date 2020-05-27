@@ -1,0 +1,8 @@
+{
+    "name": "CISE_S1_2020_Team15",
+    "description": "SEERs database website",
+    "version": "1.0.0",
+    "engines": {
+      "node": "13.13.0"
+    }
+  }
