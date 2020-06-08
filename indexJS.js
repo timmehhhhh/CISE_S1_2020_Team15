@@ -10,8 +10,11 @@ const client = new Client({
     }
 });
 
-client.connect();
-client.query('SELECT * FROM bibliography', (err, res) => {
+    client.connect();
+    //client.query('SELECT DISTINCT * FROM source WHERE title LIKE \'%Empirical%\'', (err, res) => {
+    client.query('SELECT s.title, array_to_string(array_agg(a.last_name), \',\') AS "Authors" FROM source s INNER JOIN authorsrc ass ON s.id = ass.source_id INNER JOIN author a ON a.id = ass.author_id WHERE s.title LIKE \'%Empirical%\' GROUP BY s.title', 
+     (err, res) => {
+         
     console.log(err, res);
     client.end();
 })
