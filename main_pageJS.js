@@ -1,11 +1,14 @@
 var searchFieldVal="";
 
-const express = require('express');
-const app = new express();
+var express = require('express');
+const path = require('path');
+const PORT = process.env.PORT || 5000;
 
-app.get('/',function(request, response){
-    response.sendFile('./main_page.html');
-})
+express()
+    .set('views',path.join(__dirname,'views'))
+    .set('view engine','ejs')
+    .get('/', (req,res)=>res.render('pages/main_page'))
+    .listen(PORT, ()=>console.log('Listening on ${PORT}'))
 
 // const {Client} = require('pg');
 // const connectionString = 'postgres://wiucfmzirbegqr:9624d9c375c7f9c8bc973d6396545a3a3d789e6e73a73df5e5bbb1ed519fe234@ec2-23-20-129-146.compute-1.amazonaws.com:5432/dbh1gu7tl09u8';
