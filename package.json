@@ -1,19 +1,33 @@
 {
-  "name": "CISE_S1_2020_Team15",
+  "name": "cise_s1_2020_team15",
   "description": "SEERs database website",
   "version": "1.0.0",
   "engines": {
     "node": "13.13.0"
   },
   "dependencies": {
+    "ejs": "^3.1.3",
+    "express": "^4.17.1",
     "http-server": "^0.12.3",
     "pg": "^8.2.1"
-  },
-  "scripts": {
-    "start": "index.html"
   },
   "devDependencies": {
     "chai": "^4.2.0",
     "mocha": "^7.2.0"
-  }
+  },
+  "main": "main_page.html",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/timmehhhhh/CISE_S1_2020_Team15.git"
+  },
+  "keywords": [
+    "Seers",
+    "Database"
+  ],
+  "author": "TEAM15",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/timmehhhhh/CISE_S1_2020_Team15/issues"
+  },
+  "homepage": "https://github.com/timmehhhhh/CISE_S1_2020_Team15#readme"
 }
