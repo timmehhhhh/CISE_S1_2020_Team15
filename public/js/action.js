@@ -3,10 +3,10 @@ var operationSelection = ["operator","doesnotcontain","beginswith","endswith","i
 var noQuery = 0;
 var quote = '"';
 
-function selectQuery(){
-    var openOption = "<option>";
-    var closeOption = "</option>";
+var openOption = "<option>";
+var closeOption = "</option>";
 
+function selectQuery(){
     var searchID = "searchFields"+noQuery;
     var operatorID = "operator"+noQuery;
     var valueID = "value"+noQuery;
@@ -49,14 +49,13 @@ function setValueField(nQuery){
         str = dropdownStr;
         var options = [];
         
-        // if(e == 'SE Method'){
-        //     searchFieldVal = "software engineering method";            
-        //     options = ["TDD","BDD","Pair Programming","Planning Poker","Daily Standup Meetings","Story Boards","User Story Mapping","Continuous Integration", "Retrospectives", "Burndown Charts","Requirements Prioritisation", "Version Control", "Code Sharing"];
-        // }
-        // else if(e == 'SE Methodology'){
-        //     searchFieldVal = "software engineering methodology";            
-        //     options = ["Scrum", "Waterfall", "Spiral", "XP", "Rational Unified Process", "Crystal", "Clean room", "Feature Driven Development", "Model Driven Development", "Domain Driven Development", "Formal methods", "Problem Driven Development", "Cloud computing", "Service Oriented Development", "Aspect Oriented Development", "Valuse Driven Development", "Product Driven Development", "Agile"];
-        // }
+        if(e == 'SE Method'){
+            options = ["TDD","BDD","Pair Programming","Planning Poker","Daily Standup Meetings","Story Boards","User Story Mapping","Continuous Integration", "Retrospectives", "Burndown Charts","Requirements Prioritisation", "Version Control", "Code Sharing"];
+        }
+        else if(e == 'SE Methodology'){
+            searchFieldVal = "software engineering methodology";            
+            options = ["Scrum", "Waterfall", "Spiral", "XP", "Rational Unified Process", "Crystal", "Clean room", "Feature Driven Development", "Model Driven Development", "Domain Driven Development", "Formal methods", "Problem Driven Development", "Cloud computing", "Service Oriented Development", "Aspect Oriented Development", "Valuse Driven Development", "Product Driven Development", "Agile"];
+        }
     
         for(key in options){
             str+= openOption+options[key]+closeOption;
