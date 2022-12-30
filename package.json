@@ -13,7 +13,7 @@
   },
   "devDependencies": {
     "chai": "^4.2.0",
-    "mocha": "^7.2.0"
+    "mocha": "^10.2.0"
   },
   "main": "main_page.html",
   "repository": {
